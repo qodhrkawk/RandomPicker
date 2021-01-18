@@ -3,19 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44089ABD9FAF5CBBA82A780 /* Pods_RandomPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC968C0085A474881BD9128 /* Pods_RandomPicker.framework */; };
 		EC7FA7C725B5F82C0050B692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7C625B5F82C0050B692 /* AppDelegate.swift */; };
 		EC7FA7C925B5F82C0050B692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7C825B5F82C0050B692 /* SceneDelegate.swift */; };
 		EC7FA7CB25B5F82C0050B692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7CA25B5F82C0050B692 /* ViewController.swift */; };
 		EC7FA7CE25B5F82C0050B692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7FA7CC25B5F82C0050B692 /* Main.storyboard */; };
 		EC7FA7D025B5F82E0050B692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7FA7CF25B5F82E0050B692 /* Assets.xcassets */; };
 		EC7FA7D325B5F82E0050B692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7FA7D125B5F82E0050B692 /* LaunchScreen.storyboard */; };
+		EC7FA7DD25B5FA5D0050B692 /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7FA7DC25B5FA5D0050B692 /* Custom.storyboard */; };
+		EC7FA7E125B5FA760050B692 /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7E025B5FA760050B692 /* CustomVC.swift */; };
+		EC7FA7E525B5FE060050B692 /* CustomTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7E425B5FE060050B692 /* CustomTVC.swift */; };
+		EC7FA7EA25B5FF150050B692 /* CustomTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7E925B5FF150050B692 /* CustomTableHeaderView.swift */; };
+		EC7FA7F525B601060050B692 /* CustomCandidateTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7F425B601060050B692 /* CustomCandidateTableHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6AC968C0085A474881BD9128 /* Pods_RandomPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DAEE8F43563FDDCDBD65A64 /* Pods-RandomPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPicker.debug.xcconfig"; path = "Target Support Files/Pods-RandomPicker/Pods-RandomPicker.debug.xcconfig"; sourceTree = "<group>"; };
+		7751301782D1AB204FEDCACD /* Pods-RandomPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPicker.release.xcconfig"; path = "Target Support Files/Pods-RandomPicker/Pods-RandomPicker.release.xcconfig"; sourceTree = "<group>"; };
 		EC7FA7C325B5F82C0050B692 /* RandomPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7FA7C625B5F82C0050B692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7FA7C825B5F82C0050B692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +33,11 @@
 		EC7FA7CF25B5F82E0050B692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC7FA7D225B5F82E0050B692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC7FA7D425B5F82E0050B692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC7FA7DC25B5FA5D0050B692 /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
+		EC7FA7E025B5FA760050B692 /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
+		EC7FA7E425B5FE060050B692 /* CustomTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTVC.swift; sourceTree = "<group>"; };
+		EC7FA7E925B5FF150050B692 /* CustomTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableHeaderView.swift; sourceTree = "<group>"; };
+		EC7FA7F425B601060050B692 /* CustomCandidateTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCandidateTableHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44089ABD9FAF5CBBA82A780 /* Pods_RandomPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A037B431F78EFA5363DFC7D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DAEE8F43563FDDCDBD65A64 /* Pods-RandomPicker.debug.xcconfig */,
+				7751301782D1AB204FEDCACD /* Pods-RandomPicker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF89E237288EFF32DA76AF61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AC968C0085A474881BD9128 /* Pods_RandomPicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC7FA7BA25B5F82C0050B692 = {
 			isa = PBXGroup;
 			children = (
 				EC7FA7C525B5F82C0050B692 /* RandomPicker */,
 				EC7FA7C425B5F82C0050B692 /* Products */,
+				A037B431F78EFA5363DFC7D8 /* Pods */,
+				CF89E237288EFF32DA76AF61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +90,10 @@
 		EC7FA7C525B5F82C0050B692 /* RandomPicker */ = {
 			isa = PBXGroup;
 			children = (
+				EC7FA7E825B5FEFB0050B692 /* CustomViews */,
+				EC7FA7E325B5FDE80050B692 /* Cells */,
+				EC7FA7DF25B5FA620050B692 /* VCs */,
+				EC7FA7DB25B5FA4B0050B692 /* Storyboards */,
 				EC7FA7C625B5F82C0050B692 /* AppDelegate.swift */,
 				EC7FA7C825B5F82C0050B692 /* SceneDelegate.swift */,
 				EC7FA7CA25B5F82C0050B692 /* ViewController.swift */,
@@ -67,6 +105,39 @@
 			path = RandomPicker;
 			sourceTree = "<group>";
 		};
+		EC7FA7DB25B5FA4B0050B692 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EC7FA7DC25B5FA5D0050B692 /* Custom.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EC7FA7DF25B5FA620050B692 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				EC7FA7E025B5FA760050B692 /* CustomVC.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		EC7FA7E325B5FDE80050B692 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC7FA7E425B5FE060050B692 /* CustomTVC.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EC7FA7E825B5FEFB0050B692 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				EC7FA7E925B5FF150050B692 /* CustomTableHeaderView.swift */,
+				EC7FA7F425B601060050B692 /* CustomCandidateTableHeaderView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC7FA7D725B5F82E0050B692 /* Build configuration list for PBXNativeTarget "RandomPicker" */;
 			buildPhases = (
+				DE64130EB858CD3D943B71AC /* [CP] Check Pods Manifest.lock */,
 				EC7FA7BF25B5F82C0050B692 /* Sources */,
 				EC7FA7C025B5F82C0050B692 /* Frameworks */,
 				EC7FA7C125B5F82C0050B692 /* Resources */,
+				85053A2CB3DCEF280242B011 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +200,53 @@
 				EC7FA7D325B5F82E0050B692 /* LaunchScreen.storyboard in Resources */,
 				EC7FA7D025B5F82E0050B692 /* Assets.xcassets in Resources */,
 				EC7FA7CE25B5F82C0050B692 /* Main.storyboard in Resources */,
+				EC7FA7DD25B5FA5D0050B692 /* Custom.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85053A2CB3DCEF280242B011 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RandomPicker/Pods-RandomPicker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RandomPicker/Pods-RandomPicker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RandomPicker/Pods-RandomPicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE64130EB858CD3D943B71AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RandomPicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC7FA7BF25B5F82C0050B692 /* Sources */ = {
@@ -138,8 +254,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC7FA7CB25B5F82C0050B692 /* ViewController.swift in Sources */,
+				EC7FA7E125B5FA760050B692 /* CustomVC.swift in Sources */,
 				EC7FA7C725B5F82C0050B692 /* AppDelegate.swift in Sources */,
+				EC7FA7EA25B5FF150050B692 /* CustomTableHeaderView.swift in Sources */,
+				EC7FA7F525B601060050B692 /* CustomCandidateTableHeaderView.swift in Sources */,
 				EC7FA7C925B5F82C0050B692 /* SceneDelegate.swift in Sources */,
+				EC7FA7E525B5FE060050B692 /* CustomTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +403,7 @@
 		};
 		EC7FA7D825B5F82E0050B692 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAEE8F43563FDDCDBD65A64 /* Pods-RandomPicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +423,7 @@
 		};
 		EC7FA7D925B5F82E0050B692 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7751301782D1AB204FEDCACD /* Pods-RandomPicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
