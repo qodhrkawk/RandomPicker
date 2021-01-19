@@ -14,7 +14,8 @@ class CustomCandidateTableHeaderView: UIView {
     
     var titleLabel = UILabel().then {
         $0.text = "항목"
-        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        $0.textColor = .salmon
     }
     
     
@@ -44,6 +45,13 @@ class CustomCandidateTableHeaderView: UIView {
         
     }
     func setLabel(idx: Int){
-        self.titleLabel.text = "항목\(idx)/20"
+        self.titleLabel.text = "항목🔖 (\(idx)/20)"
+        let mainString = titleLabel.text
+        
+        let range = (mainString as! NSString).range(of: String("(\(idx)/20)"))
+        let mutableAttributedString = NSMutableAttributedString.init(string: mainString!)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.subpink1, range: range)
+        
+        titleLabel.attributedText = mutableAttributedString
     }
 }

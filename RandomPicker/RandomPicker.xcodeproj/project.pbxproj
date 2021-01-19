@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		C44089ABD9FAF5CBBA82A780 /* Pods_RandomPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC968C0085A474881BD9128 /* Pods_RandomPicker.framework */; };
+		EC773B8D25B6C1C000288D50 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B8C25B6C1C000288D50 /* UIView+Extensions.swift */; };
+		EC773B9125B6C69200288D50 /* CustomPlustTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B9025B6C69200288D50 /* CustomPlustTVC.swift */; };
+		EC773B9525B6C6F800288D50 /* CustomVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B9425B6C6F800288D50 /* CustomVCDelegate.swift */; };
+		EC773B9925B7066F00288D50 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B9825B7066F00288D50 /* UIColor+Extensions.swift */; };
+		EC773B9C25B70C4C00288D50 /* CustomTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B9B25B70C4C00288D50 /* CustomTitleTVC.swift */; };
+		EC773BA025B71DA300288D50 /* CustomResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B9F25B71DA200288D50 /* CustomResultVC.swift */; };
+		EC773BA325B7218500288D50 /* CustomResultMainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773BA225B7218500288D50 /* CustomResultMainTVC.swift */; };
+		EC773BA625B721C400288D50 /* CustomResultLIstTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773BA525B721C400288D50 /* CustomResultLIstTVC.swift */; };
+		EC773BA925B724B100288D50 /* CustomResultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773BA825B724B100288D50 /* CustomResultHeader.swift */; };
+		EC773BAC25B73D0B00288D50 /* UISwitch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773BAB25B73D0B00288D50 /* UISwitch+Extensions.swift */; };
+		EC773BAF25B7571400288D50 /* CustomResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773BAE25B7571400288D50 /* CustomResultDelegate.swift */; };
 		EC7FA7C725B5F82C0050B692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7C625B5F82C0050B692 /* AppDelegate.swift */; };
 		EC7FA7C925B5F82C0050B692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7C825B5F82C0050B692 /* SceneDelegate.swift */; };
 		EC7FA7CB25B5F82C0050B692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FA7CA25B5F82C0050B692 /* ViewController.swift */; };
@@ -25,6 +36,17 @@
 		6AC968C0085A474881BD9128 /* Pods_RandomPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAEE8F43563FDDCDBD65A64 /* Pods-RandomPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPicker.debug.xcconfig"; path = "Target Support Files/Pods-RandomPicker/Pods-RandomPicker.debug.xcconfig"; sourceTree = "<group>"; };
 		7751301782D1AB204FEDCACD /* Pods-RandomPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPicker.release.xcconfig"; path = "Target Support Files/Pods-RandomPicker/Pods-RandomPicker.release.xcconfig"; sourceTree = "<group>"; };
+		EC773B8C25B6C1C000288D50 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EC773B9025B6C69200288D50 /* CustomPlustTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlustTVC.swift; sourceTree = "<group>"; };
+		EC773B9425B6C6F800288D50 /* CustomVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVCDelegate.swift; sourceTree = "<group>"; };
+		EC773B9825B7066F00288D50 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		EC773B9B25B70C4C00288D50 /* CustomTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleTVC.swift; sourceTree = "<group>"; };
+		EC773B9F25B71DA200288D50 /* CustomResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResultVC.swift; sourceTree = "<group>"; };
+		EC773BA225B7218500288D50 /* CustomResultMainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResultMainTVC.swift; sourceTree = "<group>"; };
+		EC773BA525B721C400288D50 /* CustomResultLIstTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResultLIstTVC.swift; sourceTree = "<group>"; };
+		EC773BA825B724B100288D50 /* CustomResultHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResultHeader.swift; sourceTree = "<group>"; };
+		EC773BAB25B73D0B00288D50 /* UISwitch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISwitch+Extensions.swift"; sourceTree = "<group>"; };
+		EC773BAE25B7571400288D50 /* CustomResultDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResultDelegate.swift; sourceTree = "<group>"; };
 		EC7FA7C325B5F82C0050B692 /* RandomPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7FA7C625B5F82C0050B692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7FA7C825B5F82C0050B692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +91,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EC773B8B25B6C1AF00288D50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC773B8C25B6C1C000288D50 /* UIView+Extensions.swift */,
+				EC773B9825B7066F00288D50 /* UIColor+Extensions.swift */,
+				EC773BAB25B73D0B00288D50 /* UISwitch+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EC773B9325B6C6E900288D50 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EC773B9425B6C6F800288D50 /* CustomVCDelegate.swift */,
+				EC773BAE25B7571400288D50 /* CustomResultDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EC7FA7BA25B5F82C0050B692 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +131,8 @@
 		EC7FA7C525B5F82C0050B692 /* RandomPicker */ = {
 			isa = PBXGroup;
 			children = (
+				EC773B9325B6C6E900288D50 /* Protocols */,
+				EC773B8B25B6C1AF00288D50 /* Extensions */,
 				EC7FA7E825B5FEFB0050B692 /* CustomViews */,
 				EC7FA7E325B5FDE80050B692 /* Cells */,
 				EC7FA7DF25B5FA620050B692 /* VCs */,
@@ -117,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				EC7FA7E025B5FA760050B692 /* CustomVC.swift */,
+				EC773B9F25B71DA200288D50 /* CustomResultVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -125,6 +169,10 @@
 			isa = PBXGroup;
 			children = (
 				EC7FA7E425B5FE060050B692 /* CustomTVC.swift */,
+				EC773B9B25B70C4C00288D50 /* CustomTitleTVC.swift */,
+				EC773B9025B6C69200288D50 /* CustomPlustTVC.swift */,
+				EC773BA225B7218500288D50 /* CustomResultMainTVC.swift */,
+				EC773BA525B721C400288D50 /* CustomResultLIstTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -134,6 +182,7 @@
 			children = (
 				EC7FA7E925B5FF150050B692 /* CustomTableHeaderView.swift */,
 				EC7FA7F425B601060050B692 /* CustomCandidateTableHeaderView.swift */,
+				EC773BA825B724B100288D50 /* CustomResultHeader.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -256,9 +305,20 @@
 				EC7FA7CB25B5F82C0050B692 /* ViewController.swift in Sources */,
 				EC7FA7E125B5FA760050B692 /* CustomVC.swift in Sources */,
 				EC7FA7C725B5F82C0050B692 /* AppDelegate.swift in Sources */,
+				EC773B9525B6C6F800288D50 /* CustomVCDelegate.swift in Sources */,
 				EC7FA7EA25B5FF150050B692 /* CustomTableHeaderView.swift in Sources */,
 				EC7FA7F525B601060050B692 /* CustomCandidateTableHeaderView.swift in Sources */,
+				EC773BA925B724B100288D50 /* CustomResultHeader.swift in Sources */,
+				EC773BA025B71DA300288D50 /* CustomResultVC.swift in Sources */,
+				EC773B9125B6C69200288D50 /* CustomPlustTVC.swift in Sources */,
 				EC7FA7C925B5F82C0050B692 /* SceneDelegate.swift in Sources */,
+				EC773B9925B7066F00288D50 /* UIColor+Extensions.swift in Sources */,
+				EC773BA625B721C400288D50 /* CustomResultLIstTVC.swift in Sources */,
+				EC773BA325B7218500288D50 /* CustomResultMainTVC.swift in Sources */,
+				EC773B9C25B70C4C00288D50 /* CustomTitleTVC.swift in Sources */,
+				EC773BAF25B7571400288D50 /* CustomResultDelegate.swift in Sources */,
+				EC773B8D25B6C1C000288D50 /* UIView+Extensions.swift in Sources */,
+				EC773BAC25B73D0B00288D50 /* UISwitch+Extensions.swift in Sources */,
 				EC7FA7E525B5FE060050B692 /* CustomTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

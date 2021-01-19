@@ -22,13 +22,18 @@ class CustomTableHeaderView: UIView {
     
     var customLabel = UILabel().then {
         $0.text = "커스텀"
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
+        $0.textColor = .salmon
 
     }
-    
+    var pencilImage = UIImageView().then {
+        $0.image = UIImage(named: "icPencil")
+        
+    }
     var titleLabel = UILabel().then {
         $0.text = "제목"
-        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        $0.textColor = .salmon
     }
     
     
@@ -46,17 +51,23 @@ class CustomTableHeaderView: UIView {
     func addView(){
         self.addSubview(customLabel)
         self.addSubview(titleLabel)
+        self.addSubview(pencilImage)
     }
     
     func setAutoLayout(){
         customLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(46)
+            $0.top.equalToSuperview().offset(26)
             $0.leading.equalToSuperview().offset(23)
             
         }
         titleLabel.snp.makeConstraints{
             $0.top.equalTo(customLabel.snp.bottom).offset(51)
             $0.leading.equalToSuperview().offset(23)
+        }
+        pencilImage.snp.makeConstraints{
+            $0.centerY.equalTo(titleLabel)
+            $0.leading.equalTo(titleLabel.snp.trailing)
+            $0.width.height.equalTo(19)
         }
         
         

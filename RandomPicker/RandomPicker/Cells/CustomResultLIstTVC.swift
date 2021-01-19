@@ -1,5 +1,5 @@
 //
-//  CustomTVC.swift
+//  CustomResultLIstTVC.swift
 //  RandomPicker
 //
 //  Created by Yunjae Kim on 2021/01/19.
@@ -7,18 +7,22 @@
 
 import UIKit
 
-class CustomTVC: UITableViewCell {
+class CustomResultLIstTVC: UITableViewCell {
+    static let identifier = "CustomResultLIstTVC"
     
-    static let identifier = "CustomTVC"
-    
+    @IBOutlet weak var textField: UITextField!
     var idx: Int?
     let border = CALayer()
-    @IBOutlet weak var textField: UITextField!
     
+    var customVCDelegate: CustomVCDelegate?
     let triangle = UIImageView().then{
         $0.image = UIImage(named: "ic_textfield")
     }
-    var customVCDelegate: CustomVCDelegate?
+    
+    let lineView = UIView().then {
+        $0.backgroundColor = .subpink2
+    }
+    var customResultDelegate: CustomResultDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,8 +40,7 @@ class CustomTVC: UITableViewCell {
     
     
     func setTextField(){
-       
-       
+
         border.frame = CGRect(x: 0, y: textField.frame.size.height-1, width: UIScreen.main.bounds.width-76, height: 3)
         border.backgroundColor = UIColor.subpink2.cgColor
         textField.addSubview(triangle)
@@ -48,8 +51,16 @@ class CustomTVC: UITableViewCell {
             $0.width.height.equalTo(8)
             
         }
+        textField.addSubview(lineView)
         textField.borderStyle = .none
         textField.layer.addSublayer(border)
+        
+        lineView.snp.makeConstraints{
+            $0.height.equalTo(3)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.top.equalTo(textField.snp.bottomMargin).offset(9)
+        }
 
         textField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
         textField.delegate = self
@@ -85,60 +96,30 @@ class CustomTVC: UITableViewCell {
 
 
 
-extension CustomTVC: UITextFieldDelegate {
+extension CustomResultLIstTVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         border.backgroundColor = UIColor.subpink2.cgColor
+        lineView.backgroundColor = .subpink2
         triangle.alpha = 0
         customVCDelegate?.textEndAction(text: textField.text!,idx: idx ?? -1)
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.endEditing(true)
         return true
-        
+
     }
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
         border.backgroundColor = UIColor.salmon.cgColor
+        lineView.backgroundColor = .salmon
         triangle.alpha = 1
-       
-        textField.borderStyle = .none
+
+//        textField.borderStyle = .none
         textField.layer.addSublayer(border)
         customVCDelegate?.textBeginAction(idx: idx ?? -1)
-        
+
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        customVCDelegate?.textEndAction(text: textField.text!,idx: idx ?? -1)
-//        
-//        return true
-//    }
-    
-}
-
-
-class TriangleView : UIView {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override func draw(_ rect: CGRect) {
-
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-
-        context.beginPath()
-        context.move(to: CGPoint(x: rect.minX, y: rect.maxY))
-        context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        context.addLine(to: CGPoint(x: (rect.maxX / 2.0), y: rect.minY))
-        context.closePath()
-
-        context.setFillColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.60)
-        context.fillPath()
-    }
 }

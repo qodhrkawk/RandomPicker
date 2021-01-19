@@ -1,5 +1,5 @@
 //
-//  CustomTVC.swift
+//  CustomTitleTVC.swift
 //  RandomPicker
 //
 //  Created by Yunjae Kim on 2021/01/19.
@@ -7,18 +7,19 @@
 
 import UIKit
 
-class CustomTVC: UITableViewCell {
+class CustomTitleTVC: UITableViewCell {
     
-    static let identifier = "CustomTVC"
-    
-    var idx: Int?
+    static let identifier = "CustomTitleTVC"
     let border = CALayer()
-    @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var textField: UITextField!
+
     let triangle = UIImageView().then{
         $0.image = UIImage(named: "ic_textfield")
     }
+    
     var customVCDelegate: CustomVCDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -85,11 +86,11 @@ class CustomTVC: UITableViewCell {
 
 
 
-extension CustomTVC: UITextFieldDelegate {
+extension CustomTitleTVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         border.backgroundColor = UIColor.subpink2.cgColor
         triangle.alpha = 0
-        customVCDelegate?.textEndAction(text: textField.text!,idx: idx ?? -1)
+        customVCDelegate?.textEndAction(text: textField.text!,idx: -1)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -99,46 +100,16 @@ extension CustomTVC: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-
+//        border.removeFromSuperlayer()
+//        border.frame = CGRect(x: 0, y: textField.frame.size.height-1, width: UIScreen.main.bounds.width-76, height: 3)
         border.backgroundColor = UIColor.salmon.cgColor
         triangle.alpha = 1
        
         textField.borderStyle = .none
         textField.layer.addSublayer(border)
-        customVCDelegate?.textBeginAction(idx: idx ?? -1)
+        customVCDelegate?.textBeginAction(idx: -1)
         
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        customVCDelegate?.textEndAction(text: textField.text!,idx: idx ?? -1)
-//        
-//        return true
-//    }
-    
 }
 
-
-class TriangleView : UIView {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override func draw(_ rect: CGRect) {
-
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-
-        context.beginPath()
-        context.move(to: CGPoint(x: rect.minX, y: rect.maxY))
-        context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        context.addLine(to: CGPoint(x: (rect.maxX / 2.0), y: rect.minY))
-        context.closePath()
-
-        context.setFillColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.60)
-        context.fillPath()
-    }
-}
