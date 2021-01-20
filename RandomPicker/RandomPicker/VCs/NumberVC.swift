@@ -37,6 +37,8 @@ class NumberVC: UIViewController {
         setItems()
         setTextFields()
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+       
     }
     
     func setItems(){
@@ -48,6 +50,8 @@ class NumberVC: UIViewController {
         labels[2].font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
         rangeLabel.font = UIFont(name: "AppleSDGothicNeo-ExtraBold", size: 20)
         rangeLabel.textColor = .mango
+        
+        
     }
     
     func setTextFields(){
@@ -94,22 +98,85 @@ class NumberVC: UIViewController {
         }
         rangeTextfields[1].placeholder = "99999"
         
-        rangeTextfields[0].addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
-        rangeTextfields[1].addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
+        rangeTextfields[0].addTarget(self, action: #selector(firstDidChange(sender:)), for: .editingChanged)
+        rangeTextfields[1].addTarget(self, action: #selector(secondDidChange(sender:)), for: .editingChanged)
         
     }
     
-    @objc func textFieldDidChange(sender:UITextField) {
+    @objc func firstDidChange(sender:UITextField) {
         
         if let text = sender.text {
             // 초과되는 텍스트 제거
+            firstRange = Int(sender.text!)
             if text.count > 5 {
                 let index = text.index(text.startIndex, offsetBy: 4)
                 let newString = text[text.startIndex...index]
                 sender.text = String(newString)
+                firstRange = Int(newString)
             }
             
         }
+        
+    }
+    
+    @objc func secondDidChange(sender:UITextField) {
+        
+        if let text = sender.text {
+            // 초과되는 텍스트 제거
+            secondRagne = Int(sender.text!)
+            if text.count > 5 {
+                let index = text.index(text.startIndex, offsetBy: 4)
+                let newString = text[text.startIndex...index]
+                sender.text = String(newString)
+                secondRagne = Int(newString)
+            }
+            
+        }
+        
+    }
+    
+  
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func nextButtonAction(_ sender: Any) {
+        guard let resultVC = UIStoryboard(name: "Number", bundle: nil).instantiateViewController(identifier: "NumberResultVC") as? NumberResultVC else {return}
+        
+        resultVC.myTitle = myTitle
+        resultVC.firstRange = firstRange ?? 0
+        resultVC.secondRange = secondRagne ?? 99999
+        
+        var newArray: [NumberData] = []
+        let newData = NumberData(title: myTitle ?? "숫자 뽑기", firstRange: firstRange ?? 0, secondRange: secondRagne ?? 99999)
+        let defaults = UserDefaults.standard
+        newArray.append(newData)
+     
+        if let customs = defaults.value(forKey: "Number") as? Data{
+            var originalArray = try? PropertyListDecoder().decode(Array<NumberData>.self, from: customs)
+            if originalArray != nil && originalArray!.count != 0 {
+                var flag = true
+                for i in 0...originalArray!.count-1{
+                    if originalArray![i].title == newData.title {
+                        originalArray![i] = newData
+                        flag = false
+                    }
+                }
+                if flag{
+                    originalArray?.append(newData)
+                }
+            }
+            
+          
+            defaults.set(try? PropertyListEncoder().encode(originalArray), forKey:"Number")
+        }
+        else{
+            defaults.set(try? PropertyListEncoder().encode(newArray), forKey:"Number")
+        }
+        
+        
+        
+        self.navigationController?.pushViewController(resultVC, animated: true)
         
     }
     
@@ -181,3 +248,4 @@ extension NumberVC: UITextFieldDelegate {
 //    }
     
 }
+

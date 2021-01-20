@@ -94,10 +94,43 @@ class CustomVC: UIViewController {
         vcName.myTitle = myTitle ?? ""
 //        vcName.setLabels()
         
+        var newArray: [CustomData] = []
+        let newData = CustomData(title: myTitle ?? "질문하기", candidates: candidates)
+        let defaults = UserDefaults.standard
+        newArray.append(newData)
+     
+        if let customs = defaults.value(forKey: "Custom") as? Data{
+            var originalArray = try? PropertyListDecoder().decode(Array<CustomData>.self, from: customs)
+            if originalArray != nil && originalArray!.count != 0 {
+                var flag = true
+                for i in 0...originalArray!.count-1{
+                    if originalArray![i].title == newData.title {
+                        originalArray![i] = newData
+                        flag = false
+                    }
+                }
+                if flag{
+                    originalArray?.append(newData)
+                }
+            }
+            
+          
+            defaults.set(try? PropertyListEncoder().encode(originalArray), forKey:"Custom")
+        }
+        else{
+            defaults.set(try? PropertyListEncoder().encode(newArray), forKey:"Custom")
+        }
+        
+        
+        
         self.navigationController?.pushViewController(vcName, animated: true)
         
     }
     
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
 }

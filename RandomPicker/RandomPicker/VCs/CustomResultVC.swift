@@ -12,7 +12,31 @@ class CustomResultVC: UIViewController {
     
     @IBOutlet weak var wholeTV: UITableView!
     
-    var candidates: [String] = [""]
+    var candidates: [String] = [""] {
+        didSet{
+            print(candidates)
+            let defaults = UserDefaults.standard
+            if let customs = defaults.value(forKey: "Custom") as? Data{
+                var originalArray = try? PropertyListDecoder().decode(Array<CustomData>.self, from: customs)
+                
+                if originalArray != nil{
+                    for i in 0...originalArray!.count-1{
+                        if originalArray![i].title == myTitle {
+                           var tmpData = CustomData(title: myTitle, candidates: candidates)
+                            originalArray![i] = tmpData
+                            print("고쳐짐")
+                        }
+                    }
+                }
+                
+                defaults.set(try? PropertyListEncoder().encode(originalArray), forKey: "Custom")
+                
+            }
+            
+            
+        }
+        
+    }
     var myTitle = ""
     var plusButton = false
     

@@ -38,7 +38,13 @@ extension UIColor {
     @nonobjc class var mango20: UIColor {
        return UIColor(red: 244.0 / 255.0, green: 197.0 / 255.0, blue: 76.0 / 255.0, alpha: 0.2)
      }
+    @nonobjc class var brownGrey: UIColor {
+        return UIColor(white: 177.0 / 255.0, alpha: 1.0)
+      }
 
 
+    @nonobjc class var white80: UIColor {
+        return UIColor(white: 1.0, alpha: 0.8)
+      }
 
 }

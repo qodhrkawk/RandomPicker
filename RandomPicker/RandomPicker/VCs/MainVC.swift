@@ -31,9 +31,8 @@ class MainVC: UIViewController {
         $0.contentMode = .scaleAspectFit
     }
     
-    let backgroundImageView = UIImageView().then {
-        $0.image = UIImage(named: "bgMainCustom")
-    }
+
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +58,9 @@ class MainVC: UIViewController {
         addCustomImageView()
         askButton.makeRounded(cornerRadius: 6)
         addBackgroundImageView()
+        backgroundImageView.image = UIImage(named: "bgMainCustom")
+        
+        self.view.sendSubviewToBack(backgroundImageView)
         
         
     }
@@ -91,7 +93,17 @@ class MainVC: UIViewController {
     }
     
     @IBAction func askButtonAction(_ sender: Any) {
-        
+        if isCustom{
+            guard let vcName = UIStoryboard(name: "Custom", bundle: nil).instantiateViewController(identifier: "CustomVC") as? CustomVC else{return}
+            
+            self.navigationController?.pushViewController(vcName, animated: true)
+        }
+        else{
+            guard let vcName = UIStoryboard(name: "Number", bundle: nil).instantiateViewController(identifier: "NumberVC") as? NumberVC else{return}
+            
+            self.navigationController?.pushViewController(vcName, animated: true)
+            
+        }
         
     }
     
@@ -166,6 +178,14 @@ class MainVC: UIViewController {
         }, completion: nil)
         
 
+    }
+    
+    
+    @IBAction func footButtonAction(_ sender: Any) {
+        guard let vcName = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(identifier: "InfoVC") as? InfoVC else{return}
+        
+        vcName.modalPresentationStyle = .fullScreen
+        self.present(vcName, animated: true, completion: nil)
     }
     
 }

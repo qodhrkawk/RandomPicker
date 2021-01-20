@@ -40,6 +40,13 @@
 		EC9B049525B865FE00DCDF59 /* Number.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9B049425B865FE00DCDF59 /* Number.storyboard */; };
 		EC9B049825B8662000DCDF59 /* NumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B049725B8662000DCDF59 /* NumberVC.swift */; };
 		EC9B049B25B874C000DCDF59 /* NumberResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B049A25B874C000DCDF59 /* NumberResultVC.swift */; };
+		EC9B049F25B8858800DCDF59 /* CustomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B049E25B8858800DCDF59 /* CustomData.swift */; };
+		EC9B04A425B8862800DCDF59 /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B04A325B8862800DCDF59 /* NumberData.swift */; };
+		EC9B04A725B88B5C00DCDF59 /* MainNumberTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B04A625B88B5C00DCDF59 /* MainNumberTVC.swift */; };
+		EC9B04AA25B8A1C600DCDF59 /* MainCustomTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B04A925B8A1C600DCDF59 /* MainCustomTVC.swift */; };
+		EC9B04AD25B8A56800DCDF59 /* MainTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B04AC25B8A56800DCDF59 /* MainTableDelegate.swift */; };
+		EC9B04B025B8ABDC00DCDF59 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9B04AF25B8ABDC00DCDF59 /* Info.storyboard */; };
+		EC9B04B325B8AC7200DCDF59 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B04B225B8AC7200DCDF59 /* InfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +87,13 @@
 		EC9B049425B865FE00DCDF59 /* Number.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Number.storyboard; sourceTree = "<group>"; };
 		EC9B049725B8662000DCDF59 /* NumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVC.swift; sourceTree = "<group>"; };
 		EC9B049A25B874C000DCDF59 /* NumberResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberResultVC.swift; sourceTree = "<group>"; };
+		EC9B049E25B8858800DCDF59 /* CustomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomData.swift; sourceTree = "<group>"; };
+		EC9B04A325B8862800DCDF59 /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
+		EC9B04A625B88B5C00DCDF59 /* MainNumberTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNumberTVC.swift; sourceTree = "<group>"; };
+		EC9B04A925B8A1C600DCDF59 /* MainCustomTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTVC.swift; sourceTree = "<group>"; };
+		EC9B04AC25B8A56800DCDF59 /* MainTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDelegate.swift; sourceTree = "<group>"; };
+		EC9B04AF25B8ABDC00DCDF59 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		EC9B04B225B8AC7200DCDF59 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +142,7 @@
 				EC773B9425B6C6F800288D50 /* CustomVCDelegate.swift */,
 				EC773BAE25B7571400288D50 /* CustomResultDelegate.swift */,
 				EC9B049125B80A4B00DCDF59 /* MainPageDelegate.swift */,
+				EC9B04AC25B8A56800DCDF59 /* MainTableDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -153,6 +168,7 @@
 		EC7FA7C525B5F82C0050B692 /* RandomPicker */ = {
 			isa = PBXGroup;
 			children = (
+				EC9B049D25B8857900DCDF59 /* Structs */,
 				EC773B9325B6C6E900288D50 /* Protocols */,
 				EC773B8B25B6C1AF00288D50 /* Extensions */,
 				EC7FA7E825B5FEFB0050B692 /* CustomViews */,
@@ -175,6 +191,7 @@
 				EC7FA7DC25B5FA5D0050B692 /* Custom.storyboard */,
 				EC9B048225B8044600DCDF59 /* Main.storyboard */,
 				EC9B049425B865FE00DCDF59 /* Number.storyboard */,
+				EC9B04AF25B8ABDC00DCDF59 /* Info.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -190,6 +207,7 @@
 				EC9B048E25B8068300DCDF59 /* MainPVC.swift */,
 				EC9B049725B8662000DCDF59 /* NumberVC.swift */,
 				EC9B049A25B874C000DCDF59 /* NumberResultVC.swift */,
+				EC9B04B225B8AC7200DCDF59 /* InfoVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -203,6 +221,8 @@
 				EC773BA225B7218500288D50 /* CustomResultMainTVC.swift */,
 				EC773BA525B721C400288D50 /* CustomResultLIstTVC.swift */,
 				EC9B046525B7EDBD00DCDF59 /* CustomResultPlusTVC.swift */,
+				EC9B04A625B88B5C00DCDF59 /* MainNumberTVC.swift */,
+				EC9B04A925B8A1C600DCDF59 /* MainCustomTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -215,6 +235,15 @@
 				EC773BA825B724B100288D50 /* CustomResultHeader.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		EC9B049D25B8857900DCDF59 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				EC9B049E25B8858800DCDF59 /* CustomData.swift */,
+				EC9B04A325B8862800DCDF59 /* NumberData.swift */,
+			);
+			path = Structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9B04B025B8ABDC00DCDF59 /* Info.storyboard in Resources */,
 				EC7FA7D325B5F82E0050B692 /* LaunchScreen.storyboard in Resources */,
 				EC7FA7D025B5F82E0050B692 /* Assets.xcassets in Resources */,
 				EC7FA7DD25B5FA5D0050B692 /* Custom.storyboard in Resources */,
@@ -337,24 +367,30 @@
 				EC7FA7E125B5FA760050B692 /* CustomVC.swift in Sources */,
 				EC7FA7C725B5F82C0050B692 /* AppDelegate.swift in Sources */,
 				EC773B9525B6C6F800288D50 /* CustomVCDelegate.swift in Sources */,
+				EC9B04B325B8AC7200DCDF59 /* InfoVC.swift in Sources */,
 				EC9B048925B8066600DCDF59 /* MainCustomVC.swift in Sources */,
 				EC7FA7EA25B5FF150050B692 /* CustomTableHeaderView.swift in Sources */,
+				EC9B04AA25B8A1C600DCDF59 /* MainCustomTVC.swift in Sources */,
 				EC9B048C25B8067300DCDF59 /* MainNumberVC.swift in Sources */,
 				EC7FA7F525B601060050B692 /* CustomCandidateTableHeaderView.swift in Sources */,
 				EC773BA925B724B100288D50 /* CustomResultHeader.swift in Sources */,
 				EC9B049B25B874C000DCDF59 /* NumberResultVC.swift in Sources */,
 				EC773BA025B71DA300288D50 /* CustomResultVC.swift in Sources */,
+				EC9B04A725B88B5C00DCDF59 /* MainNumberTVC.swift in Sources */,
 				EC773B9125B6C69200288D50 /* CustomPlustTVC.swift in Sources */,
 				EC7FA7C925B5F82C0050B692 /* SceneDelegate.swift in Sources */,
 				EC773B9925B7066F00288D50 /* UIColor+Extensions.swift in Sources */,
 				EC773BA625B721C400288D50 /* CustomResultLIstTVC.swift in Sources */,
 				EC9B048F25B8068300DCDF59 /* MainPVC.swift in Sources */,
+				EC9B049F25B8858800DCDF59 /* CustomData.swift in Sources */,
+				EC9B04A425B8862800DCDF59 /* NumberData.swift in Sources */,
 				EC773BA325B7218500288D50 /* CustomResultMainTVC.swift in Sources */,
 				EC9B048625B8046300DCDF59 /* MainVC.swift in Sources */,
 				EC773B9C25B70C4C00288D50 /* CustomTitleTVC.swift in Sources */,
 				EC9B047925B8002700DCDF59 /* SAConfettiView.swift in Sources */,
 				EC9B046625B7EDBD00DCDF59 /* CustomResultPlusTVC.swift in Sources */,
 				EC9B049225B80A4B00DCDF59 /* MainPageDelegate.swift in Sources */,
+				EC9B04AD25B8A56800DCDF59 /* MainTableDelegate.swift in Sources */,
 				EC773BAF25B7571400288D50 /* CustomResultDelegate.swift in Sources */,
 				EC773B8D25B6C1C000288D50 /* UIView+Extensions.swift in Sources */,
 				EC773BAC25B73D0B00288D50 /* UISwitch+Extensions.swift in Sources */,

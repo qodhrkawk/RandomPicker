@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--InfoVC-->
+        <scene sceneID="INb-Jc-am2">
+            <objects>
+                <viewController storyboardIdentifier="InfoVC" id="4aS-zd-rWK" customClass="InfoVC" customModule="RandomPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NgN-oS-xNB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgInfo" translatesAutoresizingMaskIntoConstraints="NO" id="7bE-7u-PPG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpU-LG-Xpu">
+                                <rect key="frame" x="11" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="3oi-Jr-48Z"/>
+                                    <constraint firstAttribute="height" constant="40" id="t6c-Sn-gPt"/>
+                                </constraints>
+                                <state key="normal" image="btnClose"/>
+                                <connections>
+                                    <action selector="xButtonAction:" destination="4aS-zd-rWK" eventType="touchUpInside" id="vpD-bk-b4S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vid-NN-Gpb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OpU-LG-Xpu" firstAttribute="top" secondItem="vid-NN-Gpb" secondAttribute="top" id="0JE-AR-ob2"/>
+                            <constraint firstItem="OpU-LG-Xpu" firstAttribute="leading" secondItem="vid-NN-Gpb" secondAttribute="leading" constant="11" id="DKV-au-szW"/>
+                            <constraint firstAttribute="bottom" secondItem="7bE-7u-PPG" secondAttribute="bottom" id="IxH-a0-iEU"/>
+                            <constraint firstItem="7bE-7u-PPG" firstAttribute="leading" secondItem="vid-NN-Gpb" secondAttribute="leading" id="dj7-Py-2NV"/>
+                            <constraint firstItem="vid-NN-Gpb" firstAttribute="trailing" secondItem="7bE-7u-PPG" secondAttribute="trailing" id="r6a-KQ-OVO"/>
+                            <constraint firstItem="7bE-7u-PPG" firstAttribute="top" secondItem="NgN-oS-xNB" secondAttribute="top" id="wXe-6K-g11"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="7bE-7u-PPG" id="ezW-GZ-UuU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iye-2N-bYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btnClose" width="40" height="40"/>
+        <image name="imgInfo" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ir-N7-kwl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,7 +11,7 @@
         <!--CustomVC-->
         <scene sceneID="K4p-aW-GXl">
             <objects>
-                <viewController id="p3L-f7-Cn1" customClass="CustomVC" customModule="RandomPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomVC" id="p3L-f7-Cn1" customClass="CustomVC" customModule="RandomPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AzA-IN-nLt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,6 +110,9 @@
                                             <constraint firstAttribute="width" constant="40" id="xdt-hY-Zgv"/>
                                         </constraints>
                                         <state key="normal" image="btnBack"/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="p3L-f7-Cn1" eventType="touchUpInside" id="FNC-Nv-bG3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BP7-dU-Jfi">
                                         <rect key="frame" x="362" y="44" width="40" height="40"/>
@@ -371,23 +374,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Whj-Dk-ARk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1302.8985507246377" y="116.51785714285714"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="BHd-V0-tei">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2ir-N7-kwl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x8F-6w-JfR">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="p3L-f7-Cn1" kind="relationship" relationship="rootViewController" id="zh4-x7-BLd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bLQ-2x-czu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-359.4202898550725" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>
