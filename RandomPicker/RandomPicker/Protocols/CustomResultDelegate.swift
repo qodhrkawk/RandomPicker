@@ -10,11 +10,15 @@ import Foundation
 protocol CustomResultDelegate{
     
     func randomButtonAction()
-    
+    func plusButtonAction()
+    func textEndAction(text: String,idx: Int)
+    func textBeginAction(idx: Int)
 }
 
 extension CustomResultDelegate{
     
     func randomButtonAction() {}
-    
+    func plusButtonAction() { }
+    func textEndAction(text: String,idx: Int) { }
+    func textBeginAction(idx: Int) {}
 }

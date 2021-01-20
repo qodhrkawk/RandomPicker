@@ -1,20 +1,24 @@
 PODS:
+  - SAConfettiView (0.1.8)
   - SnapKit (5.0.1)
   - Then (2.7.0)
 
 DEPENDENCIES:
+  - SAConfettiView
   - SnapKit
   - Then
 
 SPEC REPOS:
   trunk:
+    - SAConfettiView
     - SnapKit
     - Then
 
 SPEC CHECKSUMS:
+  SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: b7bbd2ba50bb47f254e86d387abb076fca33bf04
+PODFILE CHECKSUM: 5ca4e945beac363b4e91bd67fcaa27228eed4cc0
 
 COCOAPODS: 1.10.0

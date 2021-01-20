@@ -14,7 +14,7 @@ class CustomResultLIstTVC: UITableViewCell {
     var idx: Int?
     let border = CALayer()
     
-    var customVCDelegate: CustomVCDelegate?
+    var customResultDelegate: CustomResultDelegate?
     let triangle = UIImageView().then{
         $0.image = UIImage(named: "ic_textfield")
     }
@@ -22,7 +22,7 @@ class CustomResultLIstTVC: UITableViewCell {
     let lineView = UIView().then {
         $0.backgroundColor = .subpink2
     }
-    var customResultDelegate: CustomResultDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -101,7 +101,7 @@ extension CustomResultLIstTVC: UITextFieldDelegate {
         border.backgroundColor = UIColor.subpink2.cgColor
         lineView.backgroundColor = .subpink2
         triangle.alpha = 0
-        customVCDelegate?.textEndAction(text: textField.text!,idx: idx ?? -1)
+        customResultDelegate?.textEndAction(text: textField.text!,idx: idx ?? -1)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -118,7 +118,7 @@ extension CustomResultLIstTVC: UITextFieldDelegate {
 
 //        textField.borderStyle = .none
         textField.layer.addSublayer(border)
-        customVCDelegate?.textBeginAction(idx: idx ?? -1)
+        customResultDelegate?.textBeginAction(idx: idx ?? -1)
 
     }
     

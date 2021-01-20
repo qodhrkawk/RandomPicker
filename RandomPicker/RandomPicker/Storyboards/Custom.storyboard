@@ -132,7 +132,7 @@
                                     <constraint firstItem="lp2-dj-Vbc" firstAttribute="top" secondItem="rt3-eT-OT4" secondAttribute="top" constant="44" id="pCF-5a-BZw"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-SQ-s1P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-SQ-s1P">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
@@ -206,6 +206,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-ix-Hc3">
                                 <rect key="frame" x="0.0" y="84" width="414" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CustomResultLIstTVC" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomResultLIstTVC" rowHeight="117" id="xgs-aL-eIh" customClass="CustomResultLIstTVC" customModule="RandomPicker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="117"/>
@@ -317,6 +318,36 @@
                                             <outlet property="randomButton" destination="fgj-V6-StZ" id="nCf-6B-FNb"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CustomResultPlusTVC" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomResultPlusTVC" rowHeight="85" id="mBN-ee-Zji" customClass="CustomResultPlusTVC" customModule="RandomPicker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="435.5" width="414" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mBN-ee-Zji" id="T4G-N4-DdA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZB-KL-A1T">
+                                                    <rect key="frame" x="187" y="0.0" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="8iz-j6-2E9"/>
+                                                        <constraint firstAttribute="height" constant="40" id="lmR-Gk-aFP"/>
+                                                    </constraints>
+                                                    <state key="normal" image="btnAdd"/>
+                                                    <connections>
+                                                        <action selector="plusButtonAction:" destination="mBN-ee-Zji" eventType="touchUpInside" id="cz0-KY-DNH"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="bZB-KL-A1T" firstAttribute="top" secondItem="T4G-N4-DdA" secondAttribute="top" id="2PV-Rg-lI0"/>
+                                                <constraint firstItem="bZB-KL-A1T" firstAttribute="centerX" secondItem="T4G-N4-DdA" secondAttribute="centerX" id="W0g-cT-Iz1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="plusButton" destination="bZB-KL-A1T" id="S1d-dc-Unm"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -333,6 +364,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="o1S-5I-1XS" id="ss4-LT-r6S"/>
                         <outlet property="wholeTV" destination="Wnw-ix-Hc3" id="xXR-Og-zdw"/>
                     </connections>
                 </viewController>

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SAConfettiView
+
+
 
 class CustomResultMainTVC: UITableViewCell {
 
@@ -21,6 +24,7 @@ class CustomResultMainTVC: UITableViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     var mTimer : Timer?
     var customResultDelegate: CustomResultDelegate?
+    var confettiView: SAConfettiView?
     
     var resulted: [Int] = []
     
@@ -82,6 +86,12 @@ class CustomResultMainTVC: UITableViewCell {
         infoLabel.text = "정했다!"
         randomButton.isEnabled = true
         
+        confettiView = SAConfettiView(frame: innerImageView.frame)
+        innerImageView.addSubview(confettiView!)
+        confettiView!.snp.makeConstraints{
+            $0.top.leading.trailing.bottom.equalToSuperview()
+        }
+        confettiView!.startConfetti()
         if candidates.count > 0{
             if dupSwitch.isOn {
 
@@ -132,6 +142,10 @@ class CustomResultMainTVC: UITableViewCell {
         randomButton.setBorder(borderColor: .white, borderWidth: 0.0)
         randomButton.isEnabled = false
         infoLabel.text = "내선택은..."
+        
+        if confettiView != nil {
+            confettiView!.stopConfetti()
+        }
         
         mTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: false)
         
