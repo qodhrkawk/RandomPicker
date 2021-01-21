@@ -23,6 +23,7 @@ class MainNumberTVC: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         titleLabel.text = myTitle
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.0)
         setItems()
     }
 

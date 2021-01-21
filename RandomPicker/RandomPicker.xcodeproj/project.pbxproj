@@ -47,6 +47,9 @@
 		EC9B04AD25B8A56800DCDF59 /* MainTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B04AC25B8A56800DCDF59 /* MainTableDelegate.swift */; };
 		EC9B04B025B8ABDC00DCDF59 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9B04AF25B8ABDC00DCDF59 /* Info.storyboard */; };
 		EC9B04B325B8AC7200DCDF59 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B04B225B8AC7200DCDF59 /* InfoVC.swift */; };
+		ECF872E025B955E00096E766 /* CustomAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF872DF25B955E00096E766 /* CustomAlert.storyboard */; };
+		ECF872E325B9565E0096E766 /* CustomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF872E225B9565E0096E766 /* CustomAlertVC.swift */; };
+		ECF872E625B95CBC0096E766 /* CustomAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF872E525B95CBC0096E766 /* CustomAlertDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,9 @@
 		EC9B04AC25B8A56800DCDF59 /* MainTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDelegate.swift; sourceTree = "<group>"; };
 		EC9B04AF25B8ABDC00DCDF59 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		EC9B04B225B8AC7200DCDF59 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		ECF872DF25B955E00096E766 /* CustomAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAlert.storyboard; sourceTree = "<group>"; };
+		ECF872E225B9565E0096E766 /* CustomAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertVC.swift; sourceTree = "<group>"; };
+		ECF872E525B95CBC0096E766 /* CustomAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 				EC773BAE25B7571400288D50 /* CustomResultDelegate.swift */,
 				EC9B049125B80A4B00DCDF59 /* MainPageDelegate.swift */,
 				EC9B04AC25B8A56800DCDF59 /* MainTableDelegate.swift */,
+				ECF872E525B95CBC0096E766 /* CustomAlertDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 				EC9B048225B8044600DCDF59 /* Main.storyboard */,
 				EC9B049425B865FE00DCDF59 /* Number.storyboard */,
 				EC9B04AF25B8ABDC00DCDF59 /* Info.storyboard */,
+				ECF872DF25B955E00096E766 /* CustomAlert.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 				EC9B049725B8662000DCDF59 /* NumberVC.swift */,
 				EC9B049A25B874C000DCDF59 /* NumberResultVC.swift */,
 				EC9B04B225B8AC7200DCDF59 /* InfoVC.swift */,
+				ECF872E225B9565E0096E766 /* CustomAlertVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -308,6 +317,7 @@
 				EC9B04B025B8ABDC00DCDF59 /* Info.storyboard in Resources */,
 				EC7FA7D325B5F82E0050B692 /* LaunchScreen.storyboard in Resources */,
 				EC7FA7D025B5F82E0050B692 /* Assets.xcassets in Resources */,
+				ECF872E025B955E00096E766 /* CustomAlert.storyboard in Resources */,
 				EC7FA7DD25B5FA5D0050B692 /* Custom.storyboard in Resources */,
 				EC9B048325B8044600DCDF59 /* Main.storyboard in Resources */,
 				EC9B049525B865FE00DCDF59 /* Number.storyboard in Resources */,
@@ -381,6 +391,7 @@
 				EC7FA7C925B5F82C0050B692 /* SceneDelegate.swift in Sources */,
 				EC773B9925B7066F00288D50 /* UIColor+Extensions.swift in Sources */,
 				EC773BA625B721C400288D50 /* CustomResultLIstTVC.swift in Sources */,
+				ECF872E325B9565E0096E766 /* CustomAlertVC.swift in Sources */,
 				EC9B048F25B8068300DCDF59 /* MainPVC.swift in Sources */,
 				EC9B049F25B8858800DCDF59 /* CustomData.swift in Sources */,
 				EC9B04A425B8862800DCDF59 /* NumberData.swift in Sources */,
@@ -388,6 +399,7 @@
 				EC9B048625B8046300DCDF59 /* MainVC.swift in Sources */,
 				EC773B9C25B70C4C00288D50 /* CustomTitleTVC.swift in Sources */,
 				EC9B047925B8002700DCDF59 /* SAConfettiView.swift in Sources */,
+				ECF872E625B95CBC0096E766 /* CustomAlertDelegate.swift in Sources */,
 				EC9B046625B7EDBD00DCDF59 /* CustomResultPlusTVC.swift in Sources */,
 				EC9B049225B80A4B00DCDF59 /* MainPageDelegate.swift in Sources */,
 				EC9B04AD25B8A56800DCDF59 /* MainTableDelegate.swift in Sources */,
@@ -464,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -519,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -542,10 +554,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = YunaeKim.RandomPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -562,10 +575,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = YunaeKim.RandomPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

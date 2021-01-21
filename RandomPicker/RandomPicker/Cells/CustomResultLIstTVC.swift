@@ -64,6 +64,7 @@ class CustomResultLIstTVC: UITableViewCell {
 
         textField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
         textField.delegate = self
+        textField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
     }
     
     func setPlaceHolder(text: String) {
@@ -90,7 +91,19 @@ class CustomResultLIstTVC: UITableViewCell {
             })
         }
     }
-    
+    @objc func textFieldDidChange(sender:UITextField) {
+        
+        if let text = sender.text {
+            // 초과되는 텍스트 제거
+            if text.count > 15 {
+                let index = text.index(text.startIndex, offsetBy: 14)
+                let newString = text[text.startIndex...index]
+                sender.text = String(newString)
+            }
+            
+        }
+        
+    }
   
 }
 

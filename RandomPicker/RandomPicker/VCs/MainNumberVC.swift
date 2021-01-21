@@ -22,6 +22,7 @@ class MainNumberVC: UIViewController {
         numberTV.dataSource = self
         numberTV.delegate = self
         numberTV.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+       
         // Do any additional setup after loading the view.
     }
     
@@ -77,15 +78,15 @@ extension MainNumberVC: UITableViewDataSource{
         
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 150, 0, 0)
-        cell.layer.transform = rotationTransform
-        UIView.animate(withDuration: 0.5, animations: {
-            cell.layer.transform = CATransform3DIdentity
-            
-        })
-        
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 150, 0, 0)
+//        cell.layer.transform = rotationTransform
+//        UIView.animate(withDuration: 0.5, animations: {
+//            cell.layer.transform = CATransform3DIdentity
+//            
+//        })
+//        
+//    }
     
 }
 

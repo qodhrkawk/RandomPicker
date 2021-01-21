@@ -7,6 +7,7 @@
 
 import UIKit
 import SAConfettiView
+import GoogleMobileAds
 
 class NumberResultVC: UIViewController {
     
@@ -19,7 +20,7 @@ class NumberResultVC: UIViewController {
             if let numbers = defaults.value(forKey: "Number") as? Data{
                 var originalArray = try? PropertyListDecoder().decode(Array<NumberData>.self, from: numbers)
                 
-                if originalArray != nil{
+                if originalArray != nil && originalArray!.count != 0{
                     for i in 0...originalArray!.count-1{
                         if originalArray![i].title == myTitle ?? "숫자 뽑기"{
                            var tmpData = NumberData(title: myTitle ?? "숫자 뽑기", firstRange: firstRange, secondRange: secondRange)
@@ -95,6 +96,7 @@ class NumberResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         setItems()
         // Do any additional setup after loading the view.
     }
@@ -107,6 +109,8 @@ class NumberResultVC: UIViewController {
         setLabels()
         setImages()
         setTextFields()
+        
+        backgroundImageView.contentMode = .scaleToFill
         
         dupSwitch.onTintColor = .mango
         dupSwitch.transform = CGAffineTransform(scaleX: 36.0/49.0, y: 36.0/49.0)
@@ -144,7 +148,7 @@ class NumberResultVC: UIViewController {
     func setImages(){
         
         dogImageView.image = UIImage(named: "imgDoggyDefalt")
-        backgroundImageView.image = UIImage(named: "bgCustompick")
+        backgroundImageView.image = UIImage(named: "bgNumberpick")
         
         
     }
@@ -181,7 +185,8 @@ class NumberResultVC: UIViewController {
        
         firstTextField.text = String(firstRange)
         secondTextField.text = String(secondRange)
-        
+        rangeTextFields[0].addTarget(self, action: #selector(firstDidChange(sender:)), for: .editingChanged)
+        rangeTextFields[1].addTarget(self, action: #selector(secondDidChange(sender:)), for: .editingChanged)
         
     }
     
@@ -191,6 +196,8 @@ class NumberResultVC: UIViewController {
     }
     
     @IBAction func randomButtonAction(_ sender: Any) {
+        self.view.endEditing(true)
+        self.wholeScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         dogImageView.image = UIImage(named: "imgDoggyThinking")
         randomButton.backgroundColor = .subgrey
         randomButton.setTitleColor(.veryLightPink, for: .normal)
@@ -203,9 +210,49 @@ class NumberResultVC: UIViewController {
         if confettiView != nil {
             confettiView!.stopConfetti()
         }
-        mTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: false)
+        mTimer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: false)
     }
     
+    @IBAction func deleteButtonAction(_ sender: Any) {
+        
+        guard let vcName = UIStoryboard(name: "CustomAlert", bundle: nil).instantiateViewController(identifier: "CustomAlertVC") as? CustomAlertVC else {return}
+        vcName.modalPresentationStyle = .overCurrentContext
+        vcName.color = .mango
+
+        self.present(vcName, animated: false, completion: nil)
+    }
+    
+    @objc func firstDidChange(sender:UITextField) {
+        
+        if let text = sender.text {
+            // 초과되는 텍스트 제거
+            firstRange = Int(sender.text!)!
+            if text.count > 5 {
+                let index = text.index(text.startIndex, offsetBy: 4)
+                let newString = text[text.startIndex...index]
+                sender.text = String(newString)
+                firstRange = Int(newString)!
+            }
+            
+        }
+        
+    }
+    
+    @objc func secondDidChange(sender:UITextField) {
+        
+        if let text = sender.text {
+            // 초과되는 텍스트 제거
+            secondRange = Int(sender.text!)!
+            if text.count > 5 {
+                let index = text.index(text.startIndex, offsetBy: 4)
+                let newString = text[text.startIndex...index]
+                sender.text = String(newString)
+                secondRange = Int(newString)!
+            }
+            
+        }
+        
+    }
     @objc func timerCallback(){
         dogImageView.image = UIImage(named: "imgDoggyHappy")
         randomButton.backgroundColor = .white
@@ -216,8 +263,13 @@ class NumberResultVC: UIViewController {
         randomButton.isEnabled = true
         
         if dupSwitch.isOn {
-
-            result = Int.random(in: firstRange...secondRange)
+            if firstRange <= secondRange{
+                result = Int.random(in: firstRange...secondRange)
+            }
+            else{
+                result = Int.random(in: secondRange...firstRange)
+            }
+            
             resultLabel.text = String(result)
         }
         else{
@@ -225,7 +277,14 @@ class NumberResultVC: UIViewController {
         
 
             while true{
-                result = Int.random(in: firstRange...secondRange)
+                if firstRange <= secondRange{
+                    result = Int.random(in: firstRange...secondRange)
+                }
+                else{
+                    result = Int.random(in: secondRange...firstRange)
+                }
+                
+                resultLabel.text = String(result)
                 if !resulted.contains(result){
                     
                     break
@@ -266,11 +325,18 @@ extension NumberResultVC: UITextFieldDelegate {
         case rangeTextFields[0]:
             borders[0].backgroundColor = UIColor.subyellow.cgColor
             triangle1.alpha = 0
-            firstRange = Int(textField.text!)!
+            firstRange = Int(textField.text!) ?? 0
+            if firstRange == 0{
+                textField.text = "0"
+            }
+            
         default:
             borders[1].backgroundColor = UIColor.subyellow.cgColor
             triangle2.alpha = 0
-            secondRange = Int(textField.text!)!
+            secondRange = Int(textField.text!) ?? 99999
+            if secondRange == 99999{
+                textField.text = "99999"
+            }
         }
         
     }
@@ -309,6 +375,15 @@ extension NumberResultVC: UIScrollViewDelegate {
         self.view.endEditing(true)
         
     }
+    
+}
+
+extension NumberResultVC: CustomAlertDelegate{
+    
+    func deleteTapped(){
+        
+    }
+  
     
 }
 

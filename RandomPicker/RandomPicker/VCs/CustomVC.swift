@@ -25,6 +25,7 @@ class CustomVC: UIViewController {
         wholeTV.dataSource = self
         print(deviceBound)
         backgroundImage.image = UIImage(named: "bgCustom")
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,25 +91,38 @@ class CustomVC: UIViewController {
     @IBAction func nextButtonAction(_ sender: Any) {
         self.view.endEditing(true)
         guard let vcName = UIStoryboard(name: "Custom", bundle: nil).instantiateViewController(identifier: "CustomResultVC") as? CustomResultVC else { return}
-        vcName.candidates = candidates
-        vcName.myTitle = myTitle ?? ""
+        
+        var inputCandidate = candidates
+        for i in 0...inputCandidate.count-1{
+            if inputCandidate[i] == ""{
+                inputCandidate[i] = "김댕댕"
+            }
+        }
+        
+        vcName.candidates = inputCandidate
+     
+        vcName.myTitle = myTitle ?? "질문하기"
 //        vcName.setLabels()
         
         var newArray: [CustomData] = []
-        let newData = CustomData(title: myTitle ?? "질문하기", candidates: candidates)
+        let newData = CustomData(title: myTitle ?? "질문하기", candidates: inputCandidate)
         let defaults = UserDefaults.standard
         newArray.append(newData)
      
         if let customs = defaults.value(forKey: "Custom") as? Data{
             var originalArray = try? PropertyListDecoder().decode(Array<CustomData>.self, from: customs)
-            if originalArray != nil && originalArray!.count != 0 {
+            if originalArray != nil  {
                 var flag = true
-                for i in 0...originalArray!.count-1{
-                    if originalArray![i].title == newData.title {
-                        originalArray![i] = newData
-                        flag = false
+                if originalArray!.count != 0{
+                    for i in 0...originalArray!.count-1{
+                        if originalArray![i].title == newData.title {
+                            originalArray![i] = newData
+                            flag = false
+                        }
                     }
+                    
                 }
+               
                 if flag{
                     originalArray?.append(newData)
                 }
@@ -121,9 +135,10 @@ class CustomVC: UIViewController {
             defaults.set(try? PropertyListEncoder().encode(newArray), forKey:"Custom")
         }
         
+        guard let navi = self.navigationController else {return}
         
-        
-        self.navigationController?.pushViewController(vcName, animated: true)
+        self.navigationController?.popViewController(animated: false)
+        navi.pushViewController(vcName, animated: true)
         
     }
     
@@ -232,7 +247,7 @@ extension CustomVC: UITableViewDataSource {
                 return plusCell
             }
             
-            cell.setPlaceHolder(text: "김윤재")
+            cell.setPlaceHolder(text: "김댕댕")
             if indexPath.row < candidates.count && indexPath.section > 0 {
                 cell.setText(text: candidates[indexPath.row])
             }

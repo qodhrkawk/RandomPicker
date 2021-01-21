@@ -195,6 +195,9 @@
                                             <constraint firstAttribute="width" constant="40" id="xCu-T5-QGj"/>
                                         </constraints>
                                         <state key="normal" image="btnDelete"/>
+                                        <connections>
+                                            <action selector="deleteButtonAction:" destination="LuA-qZ-79f" eventType="touchUpInside" id="taA-wf-WcS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

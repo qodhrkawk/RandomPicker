@@ -36,7 +36,7 @@ class CustomResultMainTVC: UITableViewCell {
     var result: Int = 0
     
     let resultLabel = UILabel().then {
-        $0.font = UIFont(name: "AppleSDGothicNeo-ExtraBold", size: 22)
+        $0.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 22)
         $0.textColor = .mainblack
     }
     
@@ -134,7 +134,7 @@ class CustomResultMainTVC: UITableViewCell {
     }
     
     @IBAction func randomButtonAction(_ sender: Any) {
-
+        customResultDelegate?.randomButtonAction()
         dogImage.image = UIImage(named: "imgDoggyThinking")
         randomButton.backgroundColor = .subgrey
         randomButton.setTitleColor(.veryLightPink, for: .normal)
@@ -147,7 +147,7 @@ class CustomResultMainTVC: UITableViewCell {
             confettiView!.stopConfetti()
         }
         
-        mTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: false)
+        mTimer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: false)
         
         
     }

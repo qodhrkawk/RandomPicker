@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom AlertVC-->
+        <scene sceneID="T8I-m4-AFx">
+            <objects>
+                <viewController storyboardIdentifier="CustomAlertVC" id="KmM-Ib-11Z" customClass="CustomAlertVC" customModule="RandomPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cjy-FU-SBi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7H-0f-pe4">
+                                <rect key="frame" x="0.0" y="638" width="414" height="224"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="랜덤 추첨 삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-rM-IbM">
+                                        <rect key="frame" x="150.5" y="47" width="113.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 랜덤 추첨을 삭제할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcZ-gI-v02">
+                                        <rect key="frame" x="120.5" y="81" width="173" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTv-Ii-7eH">
+                                        <rect key="frame" x="23" y="128.5" width="158" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="1Zs-6W-QUf"/>
+                                            <constraint firstAttribute="width" constant="158" id="4is-mO-mGg"/>
+                                        </constraints>
+                                        <state key="normal" title="취소"/>
+                                        <connections>
+                                            <action selector="cancelButtonAction:" destination="KmM-Ib-11Z" eventType="touchUpInside" id="1Zz-za-XIB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6v-TH-agl">
+                                        <rect key="frame" x="233" y="128.5" width="158" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="158" id="Fqz-r5-7Pe"/>
+                                            <constraint firstAttribute="height" constant="60" id="xq1-ha-1zd"/>
+                                        </constraints>
+                                        <state key="normal" title="삭제"/>
+                                        <connections>
+                                            <action selector="deleteButtonAction:" destination="KmM-Ib-11Z" eventType="touchUpInside" id="md1-V7-6Qf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="P6v-TH-agl" firstAttribute="top" secondItem="mcZ-gI-v02" secondAttribute="bottom" constant="28" id="3af-LK-d8U"/>
+                                    <constraint firstItem="UTv-Ii-7eH" firstAttribute="leading" secondItem="o7H-0f-pe4" secondAttribute="leading" constant="23" id="EJl-km-bED"/>
+                                    <constraint firstAttribute="trailing" secondItem="P6v-TH-agl" secondAttribute="trailing" constant="23" id="F8V-Qj-p2I"/>
+                                    <constraint firstItem="UTv-Ii-7eH" firstAttribute="top" secondItem="mcZ-gI-v02" secondAttribute="bottom" constant="28" id="J9F-X2-gdp"/>
+                                    <constraint firstItem="mcZ-gI-v02" firstAttribute="top" secondItem="gUu-rM-IbM" secondAttribute="bottom" constant="10" id="Z8C-y5-kzQ"/>
+                                    <constraint firstItem="gUu-rM-IbM" firstAttribute="top" secondItem="o7H-0f-pe4" secondAttribute="top" constant="47" id="oX5-Qr-h5w"/>
+                                    <constraint firstAttribute="height" constant="224" id="pb0-Ez-eRa"/>
+                                    <constraint firstItem="mcZ-gI-v02" firstAttribute="centerX" secondItem="o7H-0f-pe4" secondAttribute="centerX" id="rQk-yw-aaU"/>
+                                    <constraint firstItem="gUu-rM-IbM" firstAttribute="centerX" secondItem="o7H-0f-pe4" secondAttribute="centerX" id="y8d-fX-zFH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8P7-el-Q5N">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gW6-WY-SSy"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="8P7-el-Q5N" firstAttribute="trailing" secondItem="gW6-WY-SSy" secondAttribute="trailing" id="7b8-no-UFY"/>
+                            <constraint firstItem="gW6-WY-SSy" firstAttribute="trailing" secondItem="o7H-0f-pe4" secondAttribute="trailing" id="AMS-VV-lS1"/>
+                            <constraint firstItem="8P7-el-Q5N" firstAttribute="top" secondItem="o7H-0f-pe4" secondAttribute="bottom" id="F0I-sO-8p2"/>
+                            <constraint firstAttribute="bottom" secondItem="8P7-el-Q5N" secondAttribute="bottom" id="WmY-cs-IEE"/>
+                            <constraint firstItem="o7H-0f-pe4" firstAttribute="leading" secondItem="gW6-WY-SSy" secondAttribute="leading" id="lDr-OO-FtH"/>
+                            <constraint firstItem="8P7-el-Q5N" firstAttribute="leading" secondItem="gW6-WY-SSy" secondAttribute="leading" id="vP0-m3-okV"/>
+                            <constraint firstItem="gW6-WY-SSy" firstAttribute="bottom" secondItem="o7H-0f-pe4" secondAttribute="bottom" id="vvD-WE-QOh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="UTv-Ii-7eH" id="mFV-6X-62N"/>
+                        <outlet property="containerView" destination="o7H-0f-pe4" id="YZg-Pc-WeN"/>
+                        <outlet property="deleteButton" destination="P6v-TH-agl" id="gZw-3Q-zmN"/>
+                        <outlet property="subTitleLabel" destination="mcZ-gI-v02" id="2ss-BB-fb7"/>
+                        <outlet property="titleLabel" destination="gUu-rM-IbM" id="1o0-Bw-AVe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Czd-pf-IK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="42.028985507246382" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

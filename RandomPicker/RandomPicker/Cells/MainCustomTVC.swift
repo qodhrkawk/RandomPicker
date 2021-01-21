@@ -21,6 +21,7 @@ class MainCustomTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.0)
         titleLabel.text = myTitle
         setItems()
     }

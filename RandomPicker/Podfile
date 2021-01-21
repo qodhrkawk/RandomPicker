@@ -10,5 +10,6 @@ target 'RandomPicker' do
 pod 'SnapKit'
 pod 'Then'
 pod 'SAConfettiView'
+pod 'Google-Mobile-Ads-SDK'
 
 end

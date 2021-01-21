@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class CustomResultVC: UIViewController {
 
     
     @IBOutlet weak var wholeTV: UITableView!
+    
     
     var candidates: [String] = [""] {
         didSet{
@@ -19,7 +21,7 @@ class CustomResultVC: UIViewController {
             if let customs = defaults.value(forKey: "Custom") as? Data{
                 var originalArray = try? PropertyListDecoder().decode(Array<CustomData>.self, from: customs)
                 
-                if originalArray != nil{
+                if originalArray != nil && originalArray!.count != 0{
                     for i in 0...originalArray!.count-1{
                         if originalArray![i].title == myTitle {
                            var tmpData = CustomData(title: myTitle, candidates: candidates)
@@ -47,6 +49,7 @@ class CustomResultVC: UIViewController {
         wholeTV.delegate = self
         wholeTV.dataSource = self
         wholeTV.contentInset.top = 0
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         // Do any additional setup after loading the view.
     }
     
@@ -121,6 +124,16 @@ class CustomResultVC: UIViewController {
         self.view.layoutIfNeeded()
     }
     
+    
+    @IBAction func deleteButtonAction(_ sender: Any) {
+        guard let vcName = UIStoryboard(name: "CustomAlert", bundle: nil).instantiateViewController(identifier: "CustomAlertVC") as? CustomAlertVC else {return}
+        vcName.modalPresentationStyle = .overCurrentContext
+        vcName.customAlertDelegate = self
+
+        self.present(vcName, animated: false, completion: nil)
+        
+    }
+    
 }
 
 
@@ -180,6 +193,8 @@ extension CustomResultVC: UITableViewDelegate {
         }
 
     }
+    
+    
 }
 
 extension CustomResultVC: UITableViewDataSource {
@@ -222,7 +237,7 @@ extension CustomResultVC: UITableViewDataSource {
             }
             
             guard let textCell = tableView.dequeueReusableCell(withIdentifier: CustomResultLIstTVC.identifier) as? CustomResultLIstTVC else {return UITableViewCell()}
-            textCell.setPlaceHolder(text: "김윤재")
+            textCell.setPlaceHolder(text: "김댕댕")
             textCell.setText(text: candidates[indexPath.row])
             textCell.customResultDelegate = self
             textCell.idx = indexPath.row
@@ -249,7 +264,7 @@ extension CustomResultVC: UITableViewDataSource {
 
 extension CustomResultVC: CustomResultDelegate {
     func randomButtonAction() {
-        
+        wholeTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         
     }
     func plusButtonAction() {
@@ -266,6 +281,9 @@ extension CustomResultVC: CustomResultDelegate {
     func textEndAction(text: String,idx: Int) {
         if idx != -1{
             candidates[idx] = text
+            if text == ""{
+                candidates[idx] = "김댕댕"
+            }
             wholeTV.reloadData()
         }
         else{
@@ -290,3 +308,36 @@ extension CustomResultVC: CustomResultDelegate {
         
     }
 }
+
+
+extension CustomResultVC: CustomAlertDelegate{
+    
+    func deleteTapped(){
+        let defaults = UserDefaults.standard
+        if let customs = defaults.value(forKey: "Custom") as? Data{
+            var originalArray = try? PropertyListDecoder().decode(Array<CustomData>.self, from: customs)
+            var shouldDelete = -1
+            
+            if originalArray != nil{
+                for i in 0...originalArray!.count-1{
+                    if originalArray![i].title == myTitle {
+                        shouldDelete = i
+                        print("지워짐")
+                    }
+                }
+            }
+            if shouldDelete != -1{
+                originalArray?.remove(at: shouldDelete)
+            }
+            
+            
+            defaults.set(try? PropertyListEncoder().encode(originalArray), forKey: "Custom")
+            
+        }
+            
+        self.navigationController?.popViewController(animated: true)
+    }
+  
+    
+}
+

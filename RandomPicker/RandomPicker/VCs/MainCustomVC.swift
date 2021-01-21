@@ -22,10 +22,14 @@ class MainCustomVC: UIViewController {
         customTableView.dataSource = self
         updateArray()
         print(customArray)
+       
         
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        updateArray()
+        customTableView.reloadData()
+    }
     func updateArray(){
         if let numbers = defaults.value(forKey: "Custom") as? Data{
             let originalArray = try? PropertyListDecoder().decode(Array<CustomData>.self, from: numbers)
@@ -48,15 +52,15 @@ extension MainCustomVC: UITableViewDelegate{
         return 92
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -150, 0, 0)
-        cell.layer.transform = rotationTransform
-        UIView.animate(withDuration: 0.5, animations: {
-            cell.layer.transform = CATransform3DIdentity
-            
-        })
-        
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -150, 0, 0)
+//        cell.layer.transform = rotationTransform
+//        UIView.animate(withDuration: 0.5, animations: {
+//            cell.layer.transform = CATransform3DIdentity
+//            
+//        })
+//        
+//    }
     
 }
 

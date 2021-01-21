@@ -163,6 +163,9 @@
                                     <constraint firstAttribute="height" constant="40" id="Xmi-pc-Je8"/>
                                 </constraints>
                                 <state key="normal" image="btnDeleteY"/>
+                                <connections>
+                                    <action selector="deleteButtonAction:" destination="Ghb-Hh-CHd" eventType="touchUpInside" id="44k-S3-zGS"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5j-AG-LoK">
                                 <rect key="frame" x="0.0" y="84" width="414" height="778"/>
@@ -176,7 +179,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중복허용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJQ-70-KZj">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중복추첨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJQ-70-KZj">
                                                 <rect key="frame" x="306.5" y="90" width="48.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>

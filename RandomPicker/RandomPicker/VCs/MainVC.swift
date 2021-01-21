@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class MainVC: UIViewController {
     
@@ -19,7 +20,7 @@ class MainVC: UIViewController {
   
     var pageInstance : MainPVC?
     var nowIdx = 0
-    
+    var bannerView: GADBannerView!
     var isCustom = true
     
     let customImageView = UIImageView().then{
@@ -38,6 +39,12 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         setItems()
         // Do any additional setup after loading the view.
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.delegate = self
+        
+        bannerView.adUnitID = "ca-app-pub-7889100845612463/1211099576"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     func setItems(){
@@ -47,7 +54,7 @@ class MainVC: UIViewController {
         customButton.setTitleColor(.salmon, for: .normal)
         customButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
         
-        numberButton.setTitle("숫자🔖", for: .normal)
+        numberButton.setTitle("숫자🔢", for: .normal)
         numberButton.setTitleColor(.subyellow, for: .normal)
         numberButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
         
@@ -75,7 +82,33 @@ class MainVC: UIViewController {
         
     }
 
-    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+//        bannerView.snp.makeConstraints{
+//            $0.bottom.equalToSuperview().offset(140)
+//            $0.centerX.equalToSuperview()
+//
+//
+//        }
+//
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .top,
+                              relatedBy: .equal,
+                              toItem: askButton,
+                              attribute: .bottom,
+                              multiplier: 1,
+                              constant: 10),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
     @IBAction func customButtonAction(_ sender: Any) {
         pageInstance?.setViewControllers([(pageInstance?.VCArray[0])!], direction: .reverse,
         animated: true, completion: nil)
@@ -207,5 +240,43 @@ extension MainVC: MainPageDelegate{
     }
     
     
+    
+}
+
+
+extension MainVC: GADBannerViewDelegate {
+    /// Tells the delegate an ad request loaded an ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
+      print("adViewDidReceiveAd")
+    }
+
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+        didFailToReceiveAdWithError error: GADRequestError) {
+      print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("adViewWillPresentScreen")
+    }
+
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewWillDismissScreen")
+    }
+
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewDidDismissScreen")
+    }
+
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+      print("adViewWillLeaveApplication")
+    }
     
 }

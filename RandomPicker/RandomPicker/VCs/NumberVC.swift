@@ -38,7 +38,7 @@ class NumberVC: UIViewController {
         setTextFields()
         // Do any additional setup after loading the view.
         let defaults = UserDefaults.standard
-       
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     func setItems(){
@@ -141,6 +141,7 @@ class NumberVC: UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
+        self.view.endEditing(true)
         guard let resultVC = UIStoryboard(name: "Number", bundle: nil).instantiateViewController(identifier: "NumberResultVC") as? NumberResultVC else {return}
         
         resultVC.myTitle = myTitle
@@ -154,14 +155,18 @@ class NumberVC: UIViewController {
      
         if let customs = defaults.value(forKey: "Number") as? Data{
             var originalArray = try? PropertyListDecoder().decode(Array<NumberData>.self, from: customs)
-            if originalArray != nil && originalArray!.count != 0 {
+            if originalArray != nil  {
                 var flag = true
-                for i in 0...originalArray!.count-1{
-                    if originalArray![i].title == newData.title {
-                        originalArray![i] = newData
-                        flag = false
+                if originalArray!.count != 0{
+                    for i in 0...originalArray!.count-1{
+                        if originalArray![i].title == newData.title {
+                            originalArray![i] = newData
+                            flag = false
+                        }
                     }
+                    
                 }
+                
                 if flag{
                     originalArray?.append(newData)
                 }
@@ -175,8 +180,10 @@ class NumberVC: UIViewController {
         }
         
         
+        guard let navi = self.navigationController else {return}
         
-        self.navigationController?.pushViewController(resultVC, animated: true)
+        self.navigationController?.popViewController(animated: false)
+        navi.pushViewController(resultVC, animated: true)
         
     }
     
