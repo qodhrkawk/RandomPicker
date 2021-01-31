@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C44089ABD9FAF5CBBA82A780 /* Pods_RandomPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC968C0085A474881BD9128 /* Pods_RandomPicker.framework */; };
+		EC730DCE25C704B8008DB889 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC730DCD25C704B8008DB889 /* GoogleService-Info.plist */; };
 		EC773B8D25B6C1C000288D50 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B8C25B6C1C000288D50 /* UIView+Extensions.swift */; };
 		EC773B9125B6C69200288D50 /* CustomPlustTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B9025B6C69200288D50 /* CustomPlustTVC.swift */; };
 		EC773B9525B6C6F800288D50 /* CustomVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC773B9425B6C6F800288D50 /* CustomVCDelegate.swift */; };
@@ -56,6 +57,7 @@
 		6AC968C0085A474881BD9128 /* Pods_RandomPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAEE8F43563FDDCDBD65A64 /* Pods-RandomPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPicker.debug.xcconfig"; path = "Target Support Files/Pods-RandomPicker/Pods-RandomPicker.debug.xcconfig"; sourceTree = "<group>"; };
 		7751301782D1AB204FEDCACD /* Pods-RandomPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPicker.release.xcconfig"; path = "Target Support Files/Pods-RandomPicker/Pods-RandomPicker.release.xcconfig"; sourceTree = "<group>"; };
+		EC730DCD25C704B8008DB889 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC773B8C25B6C1C000288D50 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		EC773B9025B6C69200288D50 /* CustomPlustTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlustTVC.swift; sourceTree = "<group>"; };
 		EC773B9425B6C6F800288D50 /* CustomVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVCDelegate.swift; sourceTree = "<group>"; };
@@ -182,9 +184,10 @@
 				EC7FA7E325B5FDE80050B692 /* Cells */,
 				EC7FA7DF25B5FA620050B692 /* VCs */,
 				EC7FA7DB25B5FA4B0050B692 /* Storyboards */,
-				EC7FA7C625B5F82C0050B692 /* AppDelegate.swift */,
 				EC7FA7C825B5F82C0050B692 /* SceneDelegate.swift */,
 				EC7FA7CA25B5F82C0050B692 /* ViewController.swift */,
+				EC7FA7C625B5F82C0050B692 /* AppDelegate.swift */,
+				EC730DCD25C704B8008DB889 /* GoogleService-Info.plist */,
 				EC7FA7CF25B5F82E0050B692 /* Assets.xcassets */,
 				EC7FA7D125B5F82E0050B692 /* LaunchScreen.storyboard */,
 				EC7FA7D425B5F82E0050B692 /* Info.plist */,
@@ -321,6 +324,7 @@
 				EC7FA7DD25B5FA5D0050B692 /* Custom.storyboard in Resources */,
 				EC9B048325B8044600DCDF59 /* Main.storyboard in Resources */,
 				EC9B049525B865FE00DCDF59 /* Number.storyboard in Resources */,
+				EC730DCE25C704B8008DB889 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
