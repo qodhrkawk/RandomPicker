@@ -319,12 +319,15 @@ extension CustomResultVC: CustomAlertDelegate{
             var shouldDelete = -1
             
             if originalArray != nil{
-                for i in 0...originalArray!.count-1{
-                    if originalArray![i].title == myTitle {
-                        shouldDelete = i
-                        print("지워짐")
+                if originalArray!.count > 0 {
+                    for i in 0...originalArray!.count-1{
+                        if originalArray![i].title == myTitle {
+                            shouldDelete = i
+                            print("지워짐")
+                        }
                     }
                 }
+              
             }
             if shouldDelete != -1{
                 originalArray?.remove(at: shouldDelete)

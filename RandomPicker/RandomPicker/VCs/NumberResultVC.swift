@@ -44,12 +44,15 @@ class NumberResultVC: UIViewController {
                 var originalArray = try? PropertyListDecoder().decode(Array<NumberData>.self, from: numbers)
                 
                 if originalArray != nil{
-                    for i in 0...originalArray!.count-1{
-                        if originalArray![i].title == myTitle ?? "숫자 뽑기"{
-                           var tmpData = NumberData(title: myTitle ?? "숫자 뽑기", firstRange: firstRange, secondRange: secondRange)
-                            originalArray![i] = tmpData
+                    if originalArray!.count > 0 {
+                        for i in 0...originalArray!.count-1{
+                            if originalArray![i].title == myTitle ?? "숫자 뽑기"{
+                               var tmpData = NumberData(title: myTitle ?? "숫자 뽑기", firstRange: firstRange, secondRange: secondRange)
+                                originalArray![i] = tmpData
+                            }
                         }
                     }
+                  
                 }
                 
                 defaults.set(try? PropertyListEncoder().encode(originalArray), forKey:"Number")
@@ -218,7 +221,7 @@ class NumberResultVC: UIViewController {
         guard let vcName = UIStoryboard(name: "CustomAlert", bundle: nil).instantiateViewController(identifier: "CustomAlertVC") as? CustomAlertVC else {return}
         vcName.modalPresentationStyle = .overCurrentContext
         vcName.color = .mango
-
+        vcName.customAlertDelegate = self
         self.present(vcName, animated: false, completion: nil)
     }
     
@@ -381,7 +384,28 @@ extension NumberResultVC: UIScrollViewDelegate {
 extension NumberResultVC: CustomAlertDelegate{
     
     func deleteTapped(){
-        
+        let defaults = UserDefaults.standard
+        if let customs = defaults.value(forKey: "Number") as? Data{
+            var originalArray = try? PropertyListDecoder().decode(Array<NumberData>.self, from: customs)
+            var shouldDelete = -1
+            
+            if originalArray != nil{
+                for i in 0...originalArray!.count-1{
+                    if originalArray![i].title == myTitle {
+                        shouldDelete = i
+                    }
+                }
+            }
+            if shouldDelete != -1{
+                originalArray?.remove(at: shouldDelete)
+            }
+            
+            
+            defaults.set(try? PropertyListEncoder().encode(originalArray), forKey: "Number")
+            
+        }
+            
+        self.navigationController?.popViewController(animated: true)
     }
   
     
