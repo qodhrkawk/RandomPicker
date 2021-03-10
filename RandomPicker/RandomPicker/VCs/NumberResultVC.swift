@@ -229,7 +229,13 @@ class NumberResultVC: UIViewController {
         
         if let text = sender.text {
             // 초과되는 텍스트 제거
-            firstRange = Int(sender.text!)!
+            if text.count == 0 {
+                firstRange = 0
+            }
+            else{
+                firstRange = Int(sender.text!)!
+            }
+            
             if text.count > 5 {
                 let index = text.index(text.startIndex, offsetBy: 4)
                 let newString = text[text.startIndex...index]
@@ -245,7 +251,13 @@ class NumberResultVC: UIViewController {
         
         if let text = sender.text {
             // 초과되는 텍스트 제거
-            secondRange = Int(sender.text!)!
+            if text.count == 0 {
+                secondRange = 0
+            }
+            else{
+                secondRange = Int(sender.text!)!
+            }
+            
             if text.count > 5 {
                 let index = text.index(text.startIndex, offsetBy: 4)
                 let newString = text[text.startIndex...index]
